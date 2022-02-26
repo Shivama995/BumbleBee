@@ -13,12 +13,10 @@ public class Users {
 	private String user_email;
 	private String password;
 	private String Address;
-	private String Address2;
 	private int pincode;
 	private String city;
 	private String state;
 	private String role = "User";
-	private boolean isLoggedIn=false;
 	
 	
 	public String getUser_id() {
@@ -57,12 +55,6 @@ public class Users {
 	public void setAddress(String address) {
 		Address = address;
 	}
-	public String getAddress2() {
-		return Address2;
-	}
-	public void setAddress2(String address2) {
-		Address2 = address2;
-	}
 	public int getPincode() {
 		return pincode;
 	}
@@ -87,10 +79,5 @@ public class Users {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public boolean isLoggedIn() {
-		return isLoggedIn;
-	}
-	public void setLoggedIn(boolean isLoggedIn) {
-		this.isLoggedIn = isLoggedIn;
-	}
+	
 }
