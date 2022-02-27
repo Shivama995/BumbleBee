@@ -139,4 +139,11 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping("/achh")
+	public ModelAndView a()
+	{
+		ModelAndView mv = displaypage("NewFile");
+		return mv;
+	}
+	
 }

@@ -16,7 +16,7 @@ font-family: nesans;
 src:url(/fonts/NesansSemiBold.ttf)
 }
 .logoimg{
-height:10vh;
+height:80px;
 }
 #dropdownMenuLink{
 font-size:20px;
@@ -33,7 +33,7 @@ color:black;
 
 <body>
 
-<nav class="navbar shadow navbar-expand-sm navbar-light" th:fragment="navbar">
+<nav class="navbar shadow-sm navbar-expand-md navbar-light" th:fragment="navbar">
 <div class="container-fluid d-flex">
 
 <!-- Sidebar  ---------------------------------------------------------------------------------------------------------------------------------------------->
@@ -59,7 +59,7 @@ color:black;
 
 <!--  Type-section  -------------------------------------------------------------------------------------------------->
 
-<div class="col-sm-4 collapse navbar-collapse">
+<div class="col-md-4 collapse navbar-collapse">
 <div class="col-12 d-flex justify-content-center">
 
 <ul class="navbar-nav d-flex col-12 justify-content-evenly">
@@ -108,7 +108,7 @@ color:black;
 
 
 <!-- Info-section  ---------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="collapse navbar-collapse col-sm-4">
+<div class="collapse navbar-collapse col-md-4">
 <div class=" col-12 d-flex justify-content-center ">
 
 <!-- Info-section-admin -------------------------------------------------------------------------------------------------->
@@ -131,7 +131,7 @@ color:black;
 <div class="dropdown">
 <a class="nav-link" data-bs-toggle="dropdown" href="http://localhost:8080/login"  id="dropdownMenuLink">
 <img style="height:30px" src="https://cdn-icons-png.flaticon.com/512/747/747376.png"></a>
-<ul class="dropdown-menu rounded">
+<ul class="dropdown-menu rounded" style="margin-left:-100px">
 <li th:if="${isLoggedIn==false}"><a href="http://localhost:8080/login" class="dropdown-item">Login</a></li>
 <li th:unless="${isLoggedIn==false}"><a href="http://localhost:8080/account" class="dropdown-item">Your Account</a></li>
 <li th:unless="${isLoggedIn==false}"><a href="http://localhost:8080/logout" class="dropdown-item">Logout</a></li>
@@ -143,19 +143,19 @@ color:black;
 <!-- Info-secion-user -->
 <ul class="navbar-nav col-12 justify-content-evenly"  th:unless="${userlogged.role == 'Admin'}">
 
-<!-- Info-section-admin-1 --------------------------------------------------------------->
+<!-- Info-section-user-1 --------------------------------------------------------------->
 <li class="navbar-item"><a class="nav-link" href="#"><img style="height:30px" src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"></a>
 </li>
 
-<!-- Info-section-admin-2 --------------------------------------------------------------->
+<!-- Info-section-user-2 --------------------------------------------------------------->
 <li class="navbar-item"><a class="nav-link" href="#"><img style="height:30px" src="https://cdn-icons-png.flaticon.com/512/1124/1124199.png"></a>
 </li>
 
-<!-- Info-section-admin-3 --------------------------------------------------------------->
+<!-- Info-section-user-3 --------------------------------------------------------------->
 <li class="navbar-item"><a class="nav-link" href="#"><img style="height:30px" src="https://cdn-icons.flaticon.com/png/512/2099/premium/2099140.png?token=exp=1645908826~hmac=06343e97ebbb66ca8015d995a1be4688"></a>
 </li>
 
-<!-- Info-section-admin-4 --------------------------------------------------------------->
+<!-- Info-section-user-4 --------------------------------------------------------------->
 <li class="navbar-item">
 <div class="dropdown">
 <a class="nav-link" data-bs-toggle="dropdown" href="http://localhost:8080/login"  id="dropdownMenuLink">
