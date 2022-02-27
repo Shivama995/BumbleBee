@@ -27,8 +27,7 @@ public class UserController {
 	@RequestMapping("/")
 	public ModelAndView home()
 	{
-		ModelAndView mv = new ModelAndView("homepage");
-		mv.addObject("userlogged", userlogged);
+		ModelAndView mv = displaypage("homepage");
 		return mv;
 	}
 	
@@ -45,9 +44,10 @@ public class UserController {
 		return mv;
 	}
 	
-	public ModelAndView returnhome()
+	public ModelAndView displaypage(String in)
 	{
-		ModelAndView mv = new ModelAndView("homepage");
+		ModelAndView mv = new ModelAndView(in);
+		mv.addObject("isLoggedIn", isLoggedIn);
 		mv.addObject("userlogged", userlogged);
 	return mv;
 	}
@@ -66,8 +66,8 @@ public class UserController {
 		}
 		else
 		{
-		ModelAndView mv = returnhome();
-		return mv;
+			ModelAndView mv = displaypage("homepage");
+			return mv;
 		}
 	}
 	
@@ -82,7 +82,7 @@ public class UserController {
 	{
 		userlogged = userservice.getUser(user.getUser_id());
 		isLoggedIn = true;
-		ModelAndView mv = returnhome();
+		ModelAndView mv = displaypage("homepage");
 		return mv;
 	}
 	else
@@ -108,7 +108,7 @@ public class UserController {
 		userservice.save(user);
 		userlogged = userservice.getUser(user.getUser_id());
 		isLoggedIn=true;
-		ModelAndView mv = returnhome();
+		ModelAndView mv = displaypage("homepage");
 		return mv;
 	}
 	}
