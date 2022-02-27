@@ -121,7 +121,7 @@ public class UserController {
 		{
 		if(userlogged.getRole().equals("Admin"))
 		{
-		ModelAndView mv = new ModelAndView("addpage");
+		ModelAndView mv = displaypage("addpage");
 		return mv;
 		}
 		else
