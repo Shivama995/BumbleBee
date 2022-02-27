@@ -22,8 +22,17 @@ public class UserController {
 	private boolean isLoggedIn=false;
 	private Users userlogged = new Users();
 
+	//  ---------------------------------------------------------------Display any page with isLoggedIn and userlogged variables---------------->
 	
+	public ModelAndView displaypage(String in)
+	{
+		ModelAndView mv = new ModelAndView(in);
+		mv.addObject("isLoggedIn", isLoggedIn);
+		mv.addObject("userlogged", userlogged);
+	return mv;
+	}
 
+	//------------------------------------------------------------------------home page---------------------------------------------------------->
 	@RequestMapping("/")
 	public ModelAndView home()
 	{
@@ -31,7 +40,7 @@ public class UserController {
 		return mv;
 	}
 	
-	
+	//------------------------------------------------------------------------logout-------------------------------------------------------------->
 	
 	
 	
@@ -44,13 +53,7 @@ public class UserController {
 		return mv;
 	}
 	
-	public ModelAndView displaypage(String in)
-	{
-		ModelAndView mv = new ModelAndView(in);
-		mv.addObject("isLoggedIn", isLoggedIn);
-		mv.addObject("userlogged", userlogged);
-	return mv;
-	}
+	//--------------------------------------------------------------------------login-------------------------------------------------------------->
 	
 	
 	
@@ -59,9 +62,8 @@ public class UserController {
 	{
 		if(!isLoggedIn)
 		{
-		ModelAndView mv = new ModelAndView("login-page");
-		Users user = new Users();
-		mv.addObject("user", user);
+		userlogged = new Users();
+		ModelAndView mv = displaypage("login-page");
 		return mv;	
 		}
 		else
@@ -71,12 +73,11 @@ public class UserController {
 		}
 	}
 	
-	
-	
+	//------------------------------------------------------------   checkuserid if present for login-------------------------------------------------------->
 	
 	
 	@RequestMapping("/checkuser")
-	public ModelAndView checkUser(@ModelAttribute("user") Users user)
+	public ModelAndView checkUser(@ModelAttribute("userlogged") Users user)
 	{
 	if(userservice.checkuser(user))
 	{
@@ -93,8 +94,11 @@ public class UserController {
 	}
 	}
 	
+	//---------------------------------------------------------------checkuserid if already present for registeration---------------------------------------->
+	
+	
 	@RequestMapping("/checkuserid")
-	public ModelAndView checkUserid(@ModelAttribute("user") Users user)
+	public ModelAndView checkUserid(@ModelAttribute("userlogged") Users user)
 	{
 	if(userservice.checkuserid(user))
 	{

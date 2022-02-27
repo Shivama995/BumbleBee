@@ -160,7 +160,7 @@ color:black;
 <div class="dropdown">
 <a class="nav-link" data-bs-toggle="dropdown" href="http://localhost:8080/login"  id="dropdownMenuLink">
 <img style="height:30px" src="https://cdn-icons-png.flaticon.com/512/747/747376.png"></a>
-<ul class="dropdown-menu rounded">
+<ul class="dropdown-menu rounded"  style="margin-left:-100px">
 <li th:if="${isLoggedIn==false}"><a href="http://localhost:8080/login" class="dropdown-item">Login</a></li>
 <li th:unless="${isLoggedIn==false}"><a href="http://localhost:8080/account" class="dropdown-item">Your Account</a></li>
 <li th:unless="${isLoggedIn==false}"><a href="http://localhost:8080/logout" class="dropdown-item">Logout</a></li>

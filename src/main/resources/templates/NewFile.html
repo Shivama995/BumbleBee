@@ -28,7 +28,7 @@ display:none;
 
 </head>
 
-<body onload="">
+<body th:onload="checkreg()">
 <!-- navbar ----------------------------------------------------------------------------------------------------------------------------------------------->
 <div th:insert="fragments/navbar :: navbar"></div>
 
@@ -56,28 +56,30 @@ _
 <!-- mainform ----------------------------------------------------->
 <div class="mt-lg-4 mt-md-1">
 <div  id="loginfun">
-<form  action="#" t:action="@{checkuser}" t:object="${user}" method="post">
+<form  action="#" th:action="@{checkuser}" th:object="${userlogged}" method="post">
 <label for="user_id" class="form-label fs-3  mt-md-4">Username</label><br>
-<input type="text" class="form-control" name="user_id" t:field="*{user_id}" placeholder="Username">
+<input type="text" class="form-control" name="user_id" th:field="*{user_id}" placeholder="Username">
 <label for="password" class="form-label fs-3 mt-4">Password</label><br>
-<input type="password" class="form-control" name="password" t:field="*{password}" placeholder="Password">
+<input type="password" class="form-control" name="password" th:field="*{password}" placeholder="Password">
 <div class="mt-4 d-flex justify-content-center">
 <button class="btn btn-dark btn-lg" type="submit">Submit</button>
+<p class="text-danger fs-3 mt-5" style="margin-left:30%" th:text="${invalid}"></p>
 </div>
 </form> 
 </div>
 
 
 <div id="regfun">
-<form  action="#" t:action="@{checkuser}" t:object="${user}" method="post">
+<form  action="#" th:action="@{checkuserid}" th:object="${userlogged}" method="post">
 <label for="user_id" class="form-label fs-3  mt-md-4">Username</label><br>
-<input type="text" class="form-control" name="user_id" t:field="*{user_id}" placeholder="Username">
+<input type="text" class="form-control" name="user_id" th:field="*{user_id}" placeholder="Username">
 <label for="user_email" class="form-label fs-3  mt-md-4">Email</label><br>
-<input type="email" class="form-control" name="user_email" t:field="*{user_email}" placeholder="Email">
+<input type="email" class="form-control" name="user_email" th:field="*{user_email}" placeholder="Email">
 <label for="password" class="form-label fs-3 mt-4">Password</label><br>
-<input type="password" class="form-control" name="password" t:field="*{password}" placeholder="Password">
+<input type="password" class="form-control" name="password" th:field="*{password}" placeholder="Password">
 <div class="mt-4 d-flex justify-content-center">
 <button class="btn btn-dark btn-lg" type="submit">Submit</button>
+<p class="text-danger fs-3 mt-3" style="margin-left:40%" th:text="${alreadyexist}"></p>
 </div>
 </form> 
 </div>
