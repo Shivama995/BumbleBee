@@ -45,12 +45,12 @@ public class UserController {
 	
 	
 	@GetMapping("/logout")
-	public ModelAndView logout()
+	public String logout()
 	{
 		isLoggedIn=false;
 		userlogged=new Users();
-		ModelAndView mv = login();
-		return mv;
+		
+		return "redirect:/login";
 	}
 	
 	//--------------------------------------------------------------------------login-------------------------------------------------------------->
@@ -68,7 +68,7 @@ public class UserController {
 		}
 		else
 		{
-			ModelAndView mv = displaypage("homepage");
+			ModelAndView mv = new ModelAndView("redirect:/");
 			return mv;
 		}
 	}
@@ -83,7 +83,7 @@ public class UserController {
 	{
 		userlogged = userservice.getUser(user.getUser_id());
 		isLoggedIn = true;
-		ModelAndView mv = displaypage("homepage");
+		ModelAndView mv = new ModelAndView("redirect:/");
 		return mv;
 	}
 	else
@@ -143,11 +143,6 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping("/achh")
-	public ModelAndView a()
-	{
-		ModelAndView mv = displaypage("NewFile");
-		return mv;
-	}
+	
 	
 }

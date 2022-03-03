@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
@@ -110,7 +112,7 @@ display:none;
 
 <li class="navbar-item">
 <div  class="dropdown">
-<a class="btn nav-link fs-4" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">Men</a>
+<a class="btn nav-link fs-4" href="#" role="button" id="dropdownMenuLink">Men</a>
 <ul class="dropdown-menu rounded">
 <li><a class="dropdown-item">T-shirt</a></li>
 </ul>
@@ -120,7 +122,7 @@ display:none;
 <!-- Type-section2 --------------------------------------------------------------->
 <li class="navbar-item">
 <div  class="dropdown">
-<a class="btn nav-link fs-4" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">Women</a>
+<a class="btn nav-link fs-4" href="#" role="button" id="dropdownMenuLink">Women</a>
 <ul class="dropdown-menu rounded">
 <li><a class="dropdown-item">T-shirt</a></li>
 </ul>
@@ -130,7 +132,7 @@ display:none;
 <!-- Type-section3 --------------------------------------------------------------->
 <li class="navbar-item">
 <div  class="dropdown">
-<a class="btn nav-link fs-4" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">Accessories</a>
+<a class="btn nav-link fs-4" href="#" role="button" id="dropdownMenuLink">Accessories</a>
 <ul class="dropdown-menu rounded">
 <li><a class="dropdown-item">Ring</a></li>
 </ul>
@@ -163,7 +165,7 @@ display:none;
 <ul class="navbar-nav col-12 justify-content-evenly" th:if="${userlogged.role == 'Admin'}">
 
 <!-- Info-section-admin-1 --------------------------------------------------------------->
-<li class="navbar-item"><a class="nav-link" href="http://localhost:8080/add"><img style="height:30px" src="https://cdn-icons.flaticon.com/png/512/1665/premium/1665629.png?token=exp=1645909019~hmac=bb7f9c54a24b186e204eedd9d9279383"></a>
+<li class="navbar-item"><a class="nav-link" href="http://localhost:8080/add"><img style="height:30px" src="https://cdn-icons.flaticon.com/png/512/2997/premium/2997933.png?token=exp=1646315086~hmac=01f11d97c0f5c3149491de24c1a5e173"></a>
 </li>
 
 <!-- Info-section-admin-2 --------------------------------------------------------------->
@@ -171,7 +173,7 @@ display:none;
 </li>
 
 <!-- Info-section-admin-3 --------------------------------------------------------------->
-<li class="navbar-item"><a class="nav-link" href="#"><img style="height:30px" src="https://cdn-icons.flaticon.com/png/512/2099/premium/2099140.png?token=exp=1645908826~hmac=06343e97ebbb66ca8015d995a1be4688"></a>
+<li class="navbar-item"><a class="nav-link" href="#"><img style="height:30px" src="https://cdn-icons-png.flaticon.com/512/159/159832.png"></a>
 </li>
 
 <!-- Info-section-admin-4 --------------------------------------------------------------->
@@ -200,13 +202,13 @@ display:none;
 </li>
 
 <!-- Info-section-user-3 --------------------------------------------------------------->
-<li class="navbar-item"><a class="nav-link" href="#"><img style="height:30px" src="https://cdn-icons.flaticon.com/png/512/2099/premium/2099140.png?token=exp=1645908826~hmac=06343e97ebbb66ca8015d995a1be4688"></a>
+<li class="navbar-item"><a class="nav-link" href="#"><img style="height:30px" src="https://cdn-icons-png.flaticon.com/512/159/159832.png"></a>
 </li>
 
 <!-- Info-section-user-4 --------------------------------------------------------------->
 <li class="navbar-item">
 <div class="dropdown">
-<a class="nav-link" data-bs-toggle="dropdown" href="http://localhost:8080/login"  id="dropdownMenuLink">
+<a class="nav-link"href="http://localhost:8080/login"  id="dropdownMenuLink">
 <img style="height:30px" src="https://cdn-icons-png.flaticon.com/512/747/747376.png"></a>
 <ul class="dropdown-menu rounded"  style="margin-left:-100px">
 <li th:if="${isLoggedIn==false}"><a href="http://localhost:8080/login" class="dropdown-item">Login</a></li>
